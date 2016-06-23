@@ -24,7 +24,7 @@ export default class MainMap extends React.Component {
     return (
           <MapView
               style={styles.map}
-              initialRegion={{...this.props.torch.location,
+              initialRegion={{...this.props.torch.currentLocation,
                 latitudeDelta: 1.3922,
                 longitudeDelta: 1.3421
               }}
@@ -34,7 +34,7 @@ export default class MainMap extends React.Component {
                 if (torch) {
                   return <MapView.Marker
                       key={0}
-                      coordinate={torch.location}
+                      coordinate={torch.currentLocation}
                       title={torch.name}
                       image={torchMapMarker}
                   />

@@ -5,21 +5,11 @@ import { connect } from 'react-redux';
 class TorchMap extends React.Component {
 
   render() {
+    const { list, torch } = this.props;
     return (
-      <MainMap
-          runs={this.props.runs}
-          torch={
-            {
-              name: "My Torch!",
-              location: {
-                  longitude: 30.7,
-                  latitude: 30.4
-              }
-            }
-          }
-      />
+      <MainMap runs={ list } torch={ torch }/>
     );
   }
 }
 
-export default connect(({runs})=>({runs}))(TorchMap);
+export default connect(({ runs: { list, torch} })=>({ list, torch }))(TorchMap);
