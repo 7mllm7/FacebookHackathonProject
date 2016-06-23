@@ -74,7 +74,7 @@ The users need to pick up and drop the torch to advance to its destination.
     * `currentLocation` ~ `{longitude: 30.0, latitude: 30.1}`
     * `currentRun` ~ `Run`
 * `/torch/:torchId/pickup` POST:
-  * Returns `run`.
+  * Returns `torch`.
   * Params:
     * `location`
     * `runner` ~ `userId`
@@ -83,6 +83,8 @@ The users need to pick up and drop the torch to advance to its destination.
   * Params:
     * `location`
     * `userId`
+* `/runs/:torchId` GET:
+  * Returns a list of `run`s for given `:torchId`.
 
 ## App structure
 * `redux`
