@@ -37,7 +37,9 @@ The users need to pick up and drop the torch to advance to its destination.
 
 ## Definitions
 * Torch
+  * Name
   * Current location
+  * Current `Run`
 * User
   * Name
   *
@@ -54,11 +56,30 @@ The users need to pick up and drop the torch to advance to its destination.
 ## Scope
 * Backend - Firebase:
   * OAuth
-  *
+  * DB
 * App React Native :):
   *
 * Libs:
   * `react-native-maps`
-  * ``
+  * `firebase...`
+
+## API
+* Create torch
+*
+
+## App structure
+* `redux`
+* TabBarIOS / TabBarAndroid
+* Components
+  * df
+* Reducers
+  * Runs
+    * `runs`
+  * Auth
+    * `currentUser`
+* Services
+  * Backend (Firebase?)
+  * Location
+  * Auth
 
 ## Technical
