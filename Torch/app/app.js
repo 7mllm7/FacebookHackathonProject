@@ -6,6 +6,8 @@ import Launch                from './screens/Launch';
 import TorchMap              from './screens/TorchMap';
 import Runs                  from './screens/Runs';
 import Run                   from './screens/Run';
+import Pickup                from './screens/Pickup';
+
 import TabIcon               from './components/TabIcon';
 
 console.disableYellowBox = true;
@@ -48,6 +50,10 @@ const App = () => {
                           component={ Runs }/>
                    <Scene key="singleRun" title="Run Details" component={Run}/>
                 </Scene>
+                <Scene key="pickup"
+                       title="Pickup"
+                       icon={ TabIcon('child') }
+                       component={ Pickup }/>
             </Scene>
           </Scene>
       </RouterWithRedux>

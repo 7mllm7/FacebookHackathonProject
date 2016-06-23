@@ -9,7 +9,7 @@ function delay(n) {
 }
 
 export async function fetchAll() {
-    await delay(2000);
+    await delay(1000);
     return [
         {
             id: "verylovelytorchid123",
@@ -25,7 +25,7 @@ export async function fetchAll() {
 }
 
 export async function pickup(torchId, userId, location) {
-    await delay(2000);
+    await delay(1000);
     return [
         {
             id: "verylovelytorchid123",
@@ -44,7 +44,7 @@ export async function pickup(torchId, userId, location) {
 }
 
 export async function drop(torchId, userId, location) {
-    await delay(2000);
+    await delay(1000);
     return [
         {
             id: "verylovelytorchid123",

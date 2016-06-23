@@ -15,8 +15,28 @@ const runsFetchSuccess = (state, action) => ({
   }
 });
 
+const pickup = (state, action) => ({
+  ...state, ...{
+    torch: { ...state.torch, currentRun: 'Yes' }
+  }
+});
+
+const drop = (state, action) => ({
+  ...state, ...{
+    torch: { ...state.torch, currentRun: null },
+    list: state.list.concat({
+      name: 'Woosh',
+      runner: 'Me',
+      destination: action.destination,
+      origin: state.list[state.list.length - 1].destination
+    })
+  }
+});
+
 const ACTION_HANDLERS = {
-  [Types.RUNS_FETCH_SUCCESS]: runsFetchSuccess
+  [Types.RUNS_FETCH_SUCCESS]: runsFetchSuccess,
+  [Types.PICKUP]: pickup,
+  [Types.DROP]: drop
 }
 
 export default createReducer(initialState, ACTION_HANDLERS)
