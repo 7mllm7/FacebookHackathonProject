@@ -8,11 +8,12 @@ function delay(n) {
     });
 }
 
-export async function fetchRuns() {
+export async function fetchRuns(torchId) {
     await delay(2000);
     return [
         {
             name: "My First Run",
+            runner: "someuserid1",
             origin: {
                 longitude: 29.8,
                 latitude: 30.0
@@ -24,6 +25,7 @@ export async function fetchRuns() {
         },
         {
             name: "My Second Run",
+            runner: "someotheruserid2",
             origin: {
                 longitude: 30.1,
                 latitude: 30.1
@@ -35,6 +37,7 @@ export async function fetchRuns() {
         },
         {
             name: "My Third Run",
+            runner: "yetanotheruserid7",
             origin: {
                 longitude: 29.9,
                 latitude: 29.8
