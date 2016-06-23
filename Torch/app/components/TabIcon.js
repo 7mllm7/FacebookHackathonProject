@@ -1,3 +1,4 @@
+import Icon from 'react-native-vector-icons/FontAwesome';
 import React, {
     PropTypes
 }                from "react";
@@ -13,9 +14,9 @@ const propTypes = {
   title: PropTypes.string,
 };
 
-const TabIcon = (props) => (
+const TabIcon = (iconName) => () => (
   <View style={styles.container}>
-    <Text>Icon</Text>
+    <Icon name={iconName} size={30} color="#900" />
   </View>
 );
 
