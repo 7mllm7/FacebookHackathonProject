@@ -5,6 +5,6 @@ include ':app'
 include ':react-native-vector-icons'
 project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
 =======
+>>>>>>> f4293b0887d5aa88f3f7d29d2444ce5af764bc23
 include ':react-native-maps'
 project(':react-native-maps').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-maps/android')
->>>>>>> 1b35a3982d1300cd00420a1ecdfc928633f74df4

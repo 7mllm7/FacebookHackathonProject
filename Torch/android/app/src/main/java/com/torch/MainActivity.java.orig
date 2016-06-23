@@ -4,8 +4,8 @@ import com.facebook.react.ReactActivity;
 <<<<<<< HEAD
 import com.oblador.vectoricons.VectorIconsPackage;
 =======
+>>>>>>> f4293b0887d5aa88f3f7d29d2444ce5af764bc23
 import com.airbnb.android.react.maps.MapsPackage;
->>>>>>> 1b35a3982d1300cd00420a1ecdfc928633f74df4
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 
@@ -40,11 +40,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
-<<<<<<< HEAD
-            new VectorIconsPackage()
-=======
             new MapsPackage()
->>>>>>> 1b35a3982d1300cd00420a1ecdfc928633f74df4
         );
     }
 }
