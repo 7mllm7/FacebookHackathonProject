@@ -1,14 +1,14 @@
 import { take, put, select } from 'redux-saga/effects';
 import Types from '../actions/types';
-import actions from '../actions/creators';
+import { runsFetchSuccess } from '../actions/creators';
 import { Actions }    from "react-native-router-flux";
-
+import { fetchRuns } from '../services/runs';
+import { fetchAll } from '../services/torch';
 
 export function * watchStartup () {
-  while (true) {
-    yield take(Types.STARTUP)
-    setTimeout(()=> {
-      Actions.main()
-    },4000)
-  }
+  yield take(Types.STARTUP)
+  const torch = yield fetchAll()
+  const runs = yield fetchRuns(torch[0].id)
+  yield put(runsFetchSuccess(torch[0], runs))
+  Actions.main()
 }

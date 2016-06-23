@@ -6,4 +6,5 @@ export default createTypes(`
   SET_LOCATION
   WATCH_LOCATION
   UNWATCH_LOCATION
+  RUNS_FETCH_SUCCESS
 `);

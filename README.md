@@ -64,8 +64,27 @@ The users need to pick up and drop the torch to advance to its destination.
   * `firebase...`
 
 ## API
-* Create torch
-*
+* `/user` POST:
+  * Returns `User` (with `userId`).
+  * `displayName`
+* `/torch` GET:
+  * Returns list of `torch`s.
+  * `Torch`:
+    * `name`
+    * `currentLocation` ~ `{longitude: 30.0, latitude: 30.1}`
+    * `currentRun` ~ `Run`
+* `/torch/:torchId/pickup` POST:
+  * Returns `torch`.
+  * Params:
+    * `location`
+    * `runner` ~ `userId`
+* `/torch/:torchId/drop` POST:
+  * Return `torch`.
+  * Params:
+    * `location`
+    * `userId`
+* `/runs/:torchId` GET:
+  * Returns a list of `run`s for given `:torchId`.
 
 ## App structure
 * `redux`

@@ -17,7 +17,7 @@ const getSceneStyle = function (props, computedProps) {
     shadowColor: null,
     shadowOffset: null,
     shadowOpacity: null,
-    shadowRadius: null,
+    shadowRadius: null
   };
   if (computedProps.isActive) {
     style.marginTop = 64;
@@ -36,11 +36,11 @@ const App = () => {
             <Scene key="main" tabs={true} duration={0} tabBarStyle={ styles.tabStyle }>
                 <Scene key="torchMap"
                        title="TorchMap"
-                       icon={ TabIcon }
+                       icon={ TabIcon('map-marker') }
                        component = { TorchMap }/>
                 <Scene key="runs"
                        title="Runs"
-                       icon={ TabIcon }
+                       icon={ TabIcon('users') }
                        component={ Runs }/>
             </Scene>
           </Scene>

@@ -1,7 +1,8 @@
 import React          from 'react';
-import { View, Text } from "react-native";
-import { connect }    from 'react-redux';
-import { watchLocation, unwatchLocation } from '../actions/creators';
+import {View, Text} from "react-native";
+import {connect} from 'react-redux';
+import MainMap from '../components/MainMap.js';
+import {watchLocation, unwatchLocation} from '../actions/creators';
 
 class TorchMap extends React.Component {
 
@@ -14,10 +15,11 @@ class TorchMap extends React.Component {
   }
 
   render() {
+    const { list, torch } = this.props;
     return (
-      <View><Text>Map</Text></View>
+      <MainMap runs={ list } torch={ torch }/>
     );
   }
 }
 
-export default connect(null, { watchLocation, unwatchLocation })(TorchMap);
+export default connect(({ runs: { list, torch} })=>({ list, torch }), { watchLocation, unwatchLocation })(TorchMap);

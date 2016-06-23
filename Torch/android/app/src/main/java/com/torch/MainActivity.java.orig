@@ -1,7 +1,10 @@
 package com.torch;
 
 import com.facebook.react.ReactActivity;
+<<<<<<< HEAD
 import com.oblador.vectoricons.VectorIconsPackage;
+=======
+>>>>>>> f4293b0887d5aa88f3f7d29d2444ce5af764bc23
 import com.airbnb.android.react.maps.MapsPackage;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
