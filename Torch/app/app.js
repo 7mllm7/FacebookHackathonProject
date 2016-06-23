@@ -5,9 +5,10 @@ import store                 from './store';
 import Launch                from './screens/Launch';
 import TorchMap              from './screens/TorchMap';
 import Runs                  from './screens/Runs';
-
+import Run                   from './screens/Run';
 import TabIcon               from './components/TabIcon';
 
+console.disableYellowBox = true;
 const RouterWithRedux = connect()(Router);
 
 const getSceneStyle = function (props, computedProps) {
@@ -38,10 +39,15 @@ const App = () => {
                        title="TorchMap"
                        icon={ TabIcon('map-marker') }
                        component = { TorchMap }/>
-                <Scene key="runs"
+                <Scene key="runs-main"
                        title="Runs"
-                       icon={ TabIcon('users') }
-                       component={ Runs }/>
+                       icon={ TabIcon('users') }>
+                   <Scene key="runs"
+                          title="Runs"
+                          icon={ TabIcon('users') }
+                          component={ Runs }/>
+                   <Scene key="singleRun" title="Run Details" component={Run}/>
+                </Scene>
             </Scene>
           </Scene>
       </RouterWithRedux>

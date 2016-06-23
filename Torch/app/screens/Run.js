@@ -1,7 +1,6 @@
-/**
- * Created by MLmediapps on 23/06/2016.
- */
 import React from 'react';
+import { connect } from 'react-redux';
+import MainMap from '../components/MainMap';
 import {
     StyleSheet,
     Text,
@@ -12,18 +11,14 @@ export default class Run extends React.Component {
 
     constructor(props) {
         super(props);
-
-        this.state = {
-
-        }
     }
 
     render() {
+        const { origin, destination, name } = this.props.run;
         return (
             <View style={styles.container}>
-                <Text>Name: {this.props.run.name}</Text>
-                <Text>Origin: {this.props.run.origin}</Text>
-                <Text>Destination: {this.props.run.destination}</Text>
+                <Text>Name: { name }</Text>
+                <MainMap runs={[{ origin, destination }]} destination={ destination }/>
             </View>
         );
     }
@@ -44,4 +39,10 @@ Run.propTypes = {
     run: React.PropTypes.object.isRequired
 };
 
-export default Run;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    run: state.runs.list[ownProps.index]
+  }
+}
+
+export default connect(mapStateToProps)(Run);

@@ -21,29 +21,33 @@ export default class MainMap extends React.Component {
   }
 
   render() {
+    const { torch, destination } = this.props;
+    const currentLocation = torch ? torch.currentLocation : destination;
+    console.log(this.props.runs)
     return (
           <MapView
               style={styles.map}
-              initialRegion={{...this.props.torch.currentLocation,
+              initialRegion={{...currentLocation,
                 latitudeDelta: 1.3922,
                 longitudeDelta: 1.3421
               }}
           >
               {(() => {
-                let torch = this.props.torch;
                 if (torch) {
                   return <MapView.Marker
                       key={0}
-                      coordinate={torch.currentLocation}
+                      coordinate={currentLocation}
                       title={torch.name}
-                      image={torchMapMarker}
+                      image={{
+                        uri: 'https://sirjohnlillieprimaryschool.files.wordpress.com/2012/05/torch.png?w=100&h=100'
+                      }}
                   />
                 }
               })()}
             {this.props.runs.map((run, index, array) => (_.flatten([
                 <MapView.Marker
                     key={index+1}
-                    coordinate={run.origin}
+                    coordinate={destination ? run.destination : run.origin}
                     title={`${run.name} was picked up!`}
                 />,
                 <MapView.Polyline
@@ -75,7 +79,6 @@ const styles = StyleSheet.create({
 });
 
 MainMap.propTypes = {
-  torch : React.PropTypes.object.isRequired,
   runs: React.PropTypes.array.isRequired
 };
 
