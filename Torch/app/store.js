@@ -4,6 +4,7 @@ import createLogger from 'redux-logger';
 import { Reducer } from 'react-native-router-flux';
 import createSagaMiddleware from 'redux-saga'
 import sagas from './sagas/'
+import locationMiddleware from './middleware/location';
 
 const reducerCreate = params => {
   const defaultReducer = Reducer(params);
@@ -15,12 +16,15 @@ const reducerCreate = params => {
 
 // create store...
 const sagaMiddleware = createSagaMiddleware();
-const middlewares = [createLogger({
-        collapsed: true,
-        duration: true,
-        timestamp: true
-    }), sagaMiddleware ];
-
+const middlewares = [
+  createLogger({
+    collapsed: true,
+    duration: true,
+    timestamp: true
+  }),
+  sagaMiddleware,
+  locationMiddleware
+];
 
 const store = compose(
   applyMiddleware(...middlewares)
