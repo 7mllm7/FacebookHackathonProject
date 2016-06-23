@@ -1,10 +1,19 @@
-import React                      from 'react';
+import React          from 'react';
 import { View, Text } from "react-native";
 import MainMap from '../components/MainMap.js'
+import { connect }    from 'react-redux';
+import { watchLocation, unwatchLocation } from '../actions/creators';
 
 class TorchMap extends React.Component {
 
-  
+  componentWillMount() {
+    this.props.watchLocation();
+  }
+
+  componentWillUnmount() {
+    this.props.unwatchLocation();
+  }
+
   render() {
     return (
       <MainMap
@@ -57,4 +66,4 @@ class TorchMap extends React.Component {
   }
 }
 
-export default TorchMap;
+export default connect(null, { watchLocation, unwatchLocation })(TorchMap);
