@@ -3,18 +3,36 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableHighlight
+  TouchableHighlight,
+  TextInput
 } from 'react-native';
 import { connect } from 'react-redux';
 import { pickup, drop } from '../actions/creators';
 
-const Pickup = ({ current, location, drop, pickup }) => (
-  <View style={styles.container}>
-    <TouchableHighlight onPress={ () => current ? drop(location) : pickup() }>
-      <Text>{ current ? 'Drop' : 'Pickup' }</Text>
-    </TouchableHighlight>
-  </View>
-);
+class Pickup extends React.Component {
+  constructor() {
+    super();
+    this.state = { text: 'Moshe' };
+  }
+
+  render() {
+    const {current, location, drop, pickup} = this.props;
+
+    return (
+      <View style={styles.container}>
+        <TextInput
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          onChangeText={ text => this.setState({text})}
+          value={this.state.text} />
+
+        <TouchableHighlight onPress={ () => current ? drop(location) : pickup(location) }>
+          <Text>{ current ? 'Drop' : 'Pickup' }</Text>
+        </TouchableHighlight>
+      </View>
+    );
+  }
+}
+
 
 const styles = StyleSheet.create({
   container: {
