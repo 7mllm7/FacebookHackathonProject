@@ -127,7 +127,10 @@ android {
 
 dependencies {
     compile project(':react-native-maps')
+<<<<<<< HEAD
     compile project(':react-native-vector-icons')
+=======
+>>>>>>> f4293b0887d5aa88f3f7d29d2444ce5af764bc23
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"  // From node_modules
