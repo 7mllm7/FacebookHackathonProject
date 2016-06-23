@@ -7,6 +7,8 @@ import {
 } from 'react-native';
 import _ from 'lodash'
 
+const torchMapMarker = require('../assets/torch_map_marker.png');
+
 export default class MainMap extends React.Component {
 
   constructor(props) {
@@ -34,7 +36,7 @@ export default class MainMap extends React.Component {
                       key={0}
                       coordinate={torch.location}
                       title={torch.name}
-                      image={require('../assets/torch_map_marker.png')}
+                      image={torchMapMarker}
                   />
                 }
               })()}
