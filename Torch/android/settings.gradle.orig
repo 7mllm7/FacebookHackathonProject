@@ -1,0 +1,10 @@
+rootProject.name = 'Torch'
+
+include ':app'
+<<<<<<< HEAD
+include ':react-native-vector-icons'
+project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
+=======
+include ':react-native-maps'
+project(':react-native-maps').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-maps/android')
+>>>>>>> 1b35a3982d1300cd00420a1ecdfc928633f74df4
