@@ -1,7 +1,11 @@
 import React          from 'react';
-import { View, Text } from "react-native";
+import { View, Image } from "react-native";
 import { startup }    from '../actions/creators';
 import { connect }    from 'react-redux';
+import launch from '../assets/launch.png';
+import { Dimensions } from 'react-native';
+const { height, width } = Dimensions.get('window');
+
 
 class Launch extends React.Component {
   componentDidMount() {
@@ -11,7 +15,7 @@ class Launch extends React.Component {
   render() {
     return (
       <View>
-        <Text>Launch</Text>
+        <Image source={launch} style={{ width, height }}/>
       </View>
     );
   }
