@@ -5,7 +5,7 @@ import {
   Text,
   View
 } from 'react-native';
-
+import _ from 'lodash'
 
 export default class MainMap extends React.Component {
 
@@ -15,17 +15,16 @@ export default class MainMap extends React.Component {
     this.state = {
 
     }
+
   }
 
   render() {
     return (
           <MapView
               style={styles.map}
-              initialRegion={{
-                latitude: -1.292545,
-                longitude: 36.811955,
-                latitudeDelta: 1,
-                longitudeDelta: 1
+              initialRegion={{...this.props.torch.location,
+                latitudeDelta: 1.3922,
+                longitudeDelta: 1.3421
               }}
           >
               {(() => {
@@ -39,13 +38,24 @@ export default class MainMap extends React.Component {
                   />
                 }
               })()}
-            {this.props.runs.map((run, index) => (
+            {this.props.runs.map((run, index, array) => (_.flatten([
                 <MapView.Marker
                     key={index+1}
-                    coordinate={run.location}
-                    title={run.name}
+                    coordinate={run.origin}
+                    title={`${run.name} was picked up!`}
+                />,
+                <MapView.Polyline
+                    key={array.length+1}
+                    strokeColor="#F00"
+                    lineCap="round"
+                    geodesic={true}
+                    strokeWidth={4}
+                    coordinates={[
+                        run.origin,
+                        run.destination
+                    ]}
                 />
-            ))}
+            ])))}
           </MapView>
     );
   }
