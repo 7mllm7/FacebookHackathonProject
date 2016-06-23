@@ -17,13 +17,13 @@ const runsFetchSuccess = (state, action) => ({
 
 const pickup = (state, action) => ({
   ...state, ...{
-    torch: { ...state.torch, currentRun: 'Yes' }
+    torch: { ...state.torch, currentRun: 'Yes', currentLocation: action.location }
   }
 });
 
 const drop = (state, action) => ({
   ...state, ...{
-    torch: { ...state.torch, currentRun: null },
+    torch: { ...state.torch, currentRun: null, currentLocation: action.destination },
     list: state.list.concat({
       name: 'Woosh',
       runner: 'Me',
