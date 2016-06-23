@@ -17,7 +17,7 @@ const getSceneStyle = function (props, computedProps) {
     shadowColor: null,
     shadowOffset: null,
     shadowOpacity: null,
-    shadowRadius: null,
+    shadowRadius: null
   };
   if (computedProps.isActive) {
     style.marginTop = 64;
