@@ -1,9 +1,7 @@
-import Immutable from 'immutable';
-const initialState = {}
+import { createReducer } from 'reduxsauce';
+import Types from '../actions/types';
+const initialState = {};
 
-export default function reducer(state = initialState, action = {}) {
-  switch (action.type) {
-    default:
-      return state;
-  }
-}
+const ACTION_HANDLERS = {}
+
+export default createReducer(initialState, ACTION_HANDLERS)

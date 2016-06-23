@@ -1,16 +1,13 @@
+import { createReducer } from 'reduxsauce';
+import Types from '../actions/types';
 const initialState = {
   scene: {}
 };
 
-export default function reducer(state = initialState, action = {}) {
-  switch (action.type) {
-    // focus action is dispatched when a new screen comes into focus
-    case "focus":
-      return {
-        ...state,
-        scene: action.scene
-      };
-    default:
-      return state;
-  }
+const focusScene = (state, action) => ({...state, scene: action.scene });
+
+const ACTION_HANDLERS = {
+  [Types.ROUTE_FOCUS]: focusScene
 }
+
+export default createReducer(initialState, ACTION_HANDLERS)

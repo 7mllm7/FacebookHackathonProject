@@ -1,19 +1,20 @@
-import React                      from 'react';
-import { Actions }                from "react-native-router-flux";
+import React          from 'react';
 import { View, Text } from "react-native";
+import { startup }    from '../actions/creators';
+import { connect }    from 'react-redux';
 
 class Launch extends React.Component {
   componentDidMount() {
-    setTimeout(()=> {
-      Actions.main()
-    },4000)
+    this.props.startup();
   }
 
   render() {
     return (
-      <View><Text>Launch</Text></View>
+      <View>
+        <Text>Launch</Text>
+      </View>
     );
   }
 }
 
-export default Launch;
+export default connect(()=>({}),{ startup })(Launch);

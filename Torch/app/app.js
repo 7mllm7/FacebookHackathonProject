@@ -1,8 +1,7 @@
 import React, { Component }  from 'react';
 import { Provider, connect } from 'react-redux';
-import { Scene, Router }     from 'react-native-router-flux'
-import store                 from './store'
-
+import { Scene, Router }     from 'react-native-router-flux';
+import store                 from './store';
 import Launch                from './screens/Launch';
 import TorchMap              from './screens/TorchMap';
 import Runs                  from './screens/Runs';
@@ -28,6 +27,7 @@ const getSceneStyle = function (props, computedProps) {
 };
 
 const App = () => {
+
   return (
     <Provider store={ store }>
       <RouterWithRedux getSceneStyle={getSceneStyle}>
