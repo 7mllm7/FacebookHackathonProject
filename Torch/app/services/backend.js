@@ -2,7 +2,7 @@
  * Created by MLmediapps on 23/06/2016.
  */
 
-const API_ADDR = "http://10.0.0.6:3100/v1/";
+const API_ADDR = "http://ridd.li:7777/";
 
 // TODO
 const POST = 'POST';
