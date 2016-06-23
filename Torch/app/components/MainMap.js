@@ -23,14 +23,16 @@ export default class MainMap extends React.Component {
   render() {
     const { torch, destination } = this.props;
     const currentLocation = torch ? torch.currentLocation : destination;
+    const region = {...currentLocation,
+      latitudeDelta: 1.3922,
+      longitudeDelta: 1.3421
+    }
     console.log(this.props.runs)
     return (
           <MapView
               style={styles.map}
-              initialRegion={{...currentLocation,
-                latitudeDelta: 1.3922,
-                longitudeDelta: 1.3421
-              }}
+              region={region}
+              initialRegion={region}
           >
               {(() => {
                 if (torch) {
