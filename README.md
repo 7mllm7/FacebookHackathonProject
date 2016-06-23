@@ -1,4 +1,4 @@
-# FacebookHackathonProject
+# Torch
 This is our project for 23/6/16 Facebook React Native hackathon
 
 ## Team
@@ -27,10 +27,17 @@ vnovick@gmail.com
 
 ## Brainstorm
 
+
+### Screens
+* Map with torch (single torch)
+* 
+
+## Definitions
+* Torch
+* Creator
+
 ## Scope
 * Backend - Firebase
 * React Native :)
 
 ## Technical
-
-
