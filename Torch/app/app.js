@@ -5,6 +5,7 @@ import store                 from './store';
 import Launch                from './screens/Launch';
 import TorchMap              from './screens/TorchMap';
 import Runs                  from './screens/Runs';
+import Pickup                from './screens/Pickup';
 
 import TabIcon               from './components/TabIcon';
 
@@ -42,6 +43,10 @@ const App = () => {
                        title="Runs"
                        icon={ TabIcon('users') }
                        component={ Runs }/>
+                <Scene key="pickup"
+                       title="Pickup"
+                       icon={ TabIcon('users') }
+                       component={ Pickup }/>
             </Scene>
           </Scene>
       </RouterWithRedux>

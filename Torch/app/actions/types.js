@@ -7,4 +7,6 @@ export default createTypes(`
   WATCH_LOCATION
   UNWATCH_LOCATION
   RUNS_FETCH_SUCCESS
+  PICKUP
+  DROP
 `);

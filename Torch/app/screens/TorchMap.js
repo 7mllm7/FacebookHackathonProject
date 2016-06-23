@@ -17,7 +17,7 @@ class TorchMap extends React.Component {
   render() {
     const { list, torch } = this.props;
     return (
-      <MainMap runs={ list } torch={ torch }/>
+      <MainMap runs={ list } torch={ torch } />
     );
   }
 }
